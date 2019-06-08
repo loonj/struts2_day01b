@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- 开启开发者模式 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="myDefault" extends="struts-default" abstract="true">
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+	</package>
+	
+	<!-- 动作配置 -->
+	<package name="customer" extends="myDefault" namespace="/customer">
+	
+		<action name="findAllCustomer" class="com.itheima.web.action.CustomerAction" method="findAllCustomer">
+			<result name="findAllCustomer">/jsp/customer/list.jsp</result>
+		</action>
+		
+		<!-- 获取添加客户页面 -->
+		<action name="addUICustomer" class="com.itheima.web.action.CustomerAction" method="addUICustomer">
+			<result name="addUICustomer">/jsp/customer/add.jsp</result>
+		</action>
+		
+			<!-- 添加客户 -->
+		<action name="addCustomer" class="com.itheima.web.action.CustomerAction" method="addCustomer">
+			<result name="addCustomer" type="redirect">findAllCustomer</result>
+		</action>
+		
+				<!-- 删除客户 -->
+		<action name="deleteCustomer" class="com.itheima.web.action.CustomerAction" method="deleteCustomer">
+			<result name="deleteCustomer" type="redirect">findAllCustomer</result>
+		</action>
+			
+		
+		<action name="demo1" class="com.itheima.web.action.Demo1Action" method="demo1">
+			<result name="success" type="redirectAction">demo2</result>
+			<!-- 这里没有login result，执行逻辑是先找局部，再找全局 -->
+		</action>
+		
+		<action name="demo2"><!-- 用默认动作类动作方法 -->
+			<result name="success" type="dispatcher">/success.jsp</result>
+		</action>
+	</package>
+</struts>
