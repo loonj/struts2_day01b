@@ -32,11 +32,13 @@
         <!-- 把session和线程绑定，从而实现一个线程只有一个session -->
         <property name="hibernate.current_session_context_class">thread</property>
 	  
+	  <!-- bb add -->
 	  <!-- 	<mapping class="com.itheima.domain.Customer"/>
 	  	用注解创建表，表里的字段顺序不一样，所以建议用xml创建
 	   -->
 	   
 	    <mapping resource="com/itheima/domain/Customer.hbm.xml"/>
+		
 	  	
     </session-factory>
 </hibernate-configuration>
