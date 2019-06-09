@@ -16,5 +16,6 @@ public interface ICustomerDao {
 	
 
 	Customer findCustomerById(Integer custId);
+	//更改了
 	
 }
