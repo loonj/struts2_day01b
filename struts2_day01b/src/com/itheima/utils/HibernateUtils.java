@@ -17,6 +17,7 @@ public class HibernateUtils {
 	//提供返回与本地线程绑定的session的方法
 	public static Session getSessionObject(){
 		return sessionFactory.getCurrentSession();
+		//李四修改
 	}
 	
 	//提供方法返回sessionFactory

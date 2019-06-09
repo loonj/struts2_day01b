@@ -23,6 +23,7 @@ public class CustomerDaoTest {
 		List<Customer> customers=customerService.findAllCustomer();
 		for(Customer c:customers){
 			System.out.println(c);
+			//李四修改
 		}
 	}
 
