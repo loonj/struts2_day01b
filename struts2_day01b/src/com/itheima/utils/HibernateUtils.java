@@ -27,7 +27,7 @@ public class HibernateUtils {
 	
 	public static void main(String[] args)
 	{
-		
+		//aa add
 	}
 	
 	//最后不用关闭 Session，随着线程

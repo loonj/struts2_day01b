@@ -37,6 +37,7 @@
 	   -->
 	   
 	    <mapping resource="com/itheima/domain/Customer.hbm.xml"/>
+		<!--aa add-->
 	  	
     </session-factory>
 </hibernate-configuration>
